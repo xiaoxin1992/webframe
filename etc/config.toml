@@ -1,0 +1,28 @@
+[app]
+name = "webframe"
+
+[http]
+level = "debug"
+host = "127.0.0.1"
+port = 8080
+
+
+[mysql]
+host = "127.0.0.1"
+port = 3306
+database = "test"
+username = "root"
+password = "root"
+
+
+[log]
+level = "debug"
+path = "logs/alert.log"
+console = true              # 是否在consul打印日志
+format = "text"             # text或json格式
+maxSize = 1                 # 保留日志大小单位MB超过大小会被切割
+maxBackup = 7               # 最大可保留多个日志
+maxAge = 7                  # 最大保留日志天数
+localTime = true            # 使用本地时间，否则使用utc时间
+compress = false            #  是否切割日志时候压缩日志
+
