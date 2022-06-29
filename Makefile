@@ -1,6 +1,8 @@
 PROJECT_NAME := "projectName"
 MAIN_FILE_PATH := "main.go"
-PKG := "webframe" ## 需要跟go.mod保持一致
+
+## 需要跟go.mod保持一致
+PKG := "webframe"
 
 
 PKG_LIST := $(shell go list ${PKG}/... | grep -v /vendor/)
