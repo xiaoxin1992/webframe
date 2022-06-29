@@ -8,6 +8,7 @@ import (
 type GinApp interface {
 	Registry(router gin.IRouter)
 	Name() string
+	Config() error
 	Version() string
 }
 

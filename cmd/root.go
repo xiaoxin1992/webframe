@@ -10,6 +10,7 @@ import (
 	"webframe/conf"
 	"webframe/pkg/logger"
 	"webframe/version"
+	"webframe/pkg/app"
 )
 
 var (
@@ -37,6 +38,10 @@ var rootCmd = &cobra.Command{
 		}
 		// 初始化日志配置
 		if err := logger.NewLogger(rootPath); err != nil {
+			return err
+		}
+		// 初始化全局APP的config
+		if err := app.InitAllApp(); err != nil {
 			return err
 		}
 		// 启动服务
